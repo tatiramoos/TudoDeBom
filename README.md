@@ -8,7 +8,7 @@ Uma API para gerenciar transações na nova plataforma da <b>Farmácia Tudo de B
 O sistema  precisa ter as seguintes opções:
 - Cadastro de Clientes
 - Listagem de Clientes
-- Atualização Clientes
+- Atualização de Clientes
 - Deletar Clientes
 - Histórico de Transações
 - Os Medicamentos Genéricos têm 20% de desconto
