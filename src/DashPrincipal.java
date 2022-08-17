@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import Sistema.ClienteTela;
+import Sistema.Estoque;
 import Sistema.HistoricoBancoDados;
 import Sistema.ListaCompleta;
 import Sistema.ListaDetalhes;
@@ -189,6 +190,21 @@ public class DashPrincipal extends JFrame {
 		menuBar_1.add(mnNewMenu_1);
 
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Listagem");
+		mnNewMenu_1.add(mntmNewMenuItem_1);
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				telaCliente.dispose();
+				listaDetalhes.dispose();
+				listaDetalhes.setVisible(false);
+				//vendas.setVisible(true);
+				HistoricoBancoDados bd = new HistoricoBancoDados();
+				bd.conectar();
+				bd.baixandoProdutos();
+				Estoque.estoque();
+				
+				//desktopPane.add(vendas);				
+			}
+		});
 		mnNewMenu_1.add(mntmNewMenuItem_1);
 
 		/**

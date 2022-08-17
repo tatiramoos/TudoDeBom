@@ -22,12 +22,16 @@ public class HistoricoBancoDados {
 	private static List<ConsultaHistorico> listaHistorico = new ArrayList<>();
 	private static HashMap<Integer, Produto> listaProdutos = new HashMap<>();
 	private static List<String> listaCpf = new ArrayList<>();
+	private static List<String> estoque = new ArrayList<>();
 	private Connection connection = null;
 	private java.sql.Statement statement = null;
 	private ResultSet resultset = null;
 	 
 	
 	
+	public static List<String> getEstoque() {
+		return estoque;
+	}
 	public static List<String> getListaCpf() {
 		return listaCpf;
 	}
@@ -144,10 +148,23 @@ public void baixandoProdutos() {
 				int idGenerico = resultset.getInt("generic_value");
 				int id = Integer.parseInt(meuID);
 				int quantEstoque = Integer.parseInt(quant);
+				String generico = "";
+				
+				if(idGenerico ==  1) {
+					generico = "Generico";
+					
+				}else {
+					generico = "N/ Generico";
+				}
 				
 				
 				
 				listaProdutos.put(id, new Produto(nomeP, quantEstoque,valor, idGenerico ));
+				estoque.add(String.format("ID: %s | Produo: %s | Quantidade: %d | Valor: %.2f | Tipo: %s",meuID, nomeP, quantEstoque,valor, generico));
+				
+				
+				
+				
 				
 				
 				
