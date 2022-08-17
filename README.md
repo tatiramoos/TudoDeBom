@@ -87,4 +87,4 @@ O sistema  precisa ter as seguintes opções:
 				remover();
 			}
 
-Esse projeto faz parte do treinamento <b>If Black, Then Code</b> - Desafio 1º parte <b>IBM</b> e <b>Gama Academy</b>.
+Esse projeto faz parte do treinamento <b>If Black, Then Code</b> - Desafio #1 <b>IBM</b> e <b>Gama Academy</b>.
